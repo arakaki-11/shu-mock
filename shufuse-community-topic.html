@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>俳優・村上虹郎さんが傷害の疑いで書類送検｜シュフーズ コミュニティ</title>
+<style>
+  :root {
+    --color-primary: #e889a0;
+    --color-primary-dark: #c9608a;
+    --color-primary-light: #fdf1f5;
+    --color-accent: #f7a9c0;
+    --color-text: #333333;
+    --color-text-muted: #888888;
+    --color-text-light: #aaaaaa;
+    --color-border: #e8e0dc;
+    --color-bg: #faf8f7;
+    --color-white: #ffffff;
+    --color-tag-bg: #fff0f5;
+    --color-tag-text: #c9608a;
+    --color-plus: #e889a0;
+    --font-main: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Meiryo', sans-serif;
+    --radius: 6px;
+    --shadow: 0 1px 4px rgba(0,0,0,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-main); background: var(--color-bg); color: var(--color-text); font-size: 14px; line-height: 1.7; }
+  a { color: inherit; text-decoration: none; }
+  .site-header { background: var(--color-white); border-bottom: 3px solid var(--color-primary); box-shadow: 0 2px 6px rgba(232,96,76,0.10); position: sticky; top: 0; z-index: 100; }
+  .header-inner { max-width: 1080px; margin: 0 auto; padding: 12px 16px 0; }
+  .header-top { display: flex; align-items: center; gap: 12px; padding-bottom: 8px; }
+  .logo-wrap { display: flex; align-items: center; gap: 10px; }
+  .logo-wrap img { height: 36px; width: auto; }
+  .site-title { font-size: 20px; font-weight: 700; color: var(--color-primary); letter-spacing: .04em; }
+  .site-catch { font-size: 11px; color: var(--color-text-muted); margin-left: auto; white-space: nowrap; }
+  .header-nav { display: flex; border-top: 1px solid var(--color-border); margin-top: 2px; }
+  .header-nav a { display: inline-flex; align-items: center; gap: 5px; padding: 8px 18px; font-size: 13px; font-weight: 600; color: var(--color-text-muted); border-bottom: 3px solid transparent; transition: color .2s, border-color .2s; }
+  .header-nav a:hover { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+  .page-wrapper { max-width: 1080px; margin: 0 auto; padding: 20px 16px; }
+  .content-layout { display: grid; grid-template-columns: 1fr 280px; gap: 24px; align-items: start; }
+  .breadcrumb { font-size: 12px; color: var(--color-text-muted); margin-bottom: 16px; display: flex; align-items: center; flex-wrap: wrap; gap: 4px; }
+  .breadcrumb a { color: #2a6db5; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb-sep { color: var(--color-text-light); }
+  .topic-header { background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px 20px 16px; margin-bottom: 16px; border-left: 4px solid var(--color-primary); }
+  .topic-category { display: inline-block; font-size: 11px; padding: 2px 10px; border-radius: 10px; background: var(--color-tag-bg); color: var(--color-tag-text); font-weight: 700; margin-bottom: 10px; }
+  .topic-main-title { font-size: 18px; font-weight: 700; line-height: 1.5; color: var(--color-text); margin-bottom: 10px; }
+  .topic-info-bar { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; font-size: 12px; color: var(--color-text-muted); padding-top: 10px; border-top: 1px solid var(--color-border); }
+  .topic-action-btns { margin-left: auto; display: flex; gap: 8px; }
+  .btn-action { font-size: 12px; padding: 5px 14px; border-radius: 20px; border: 1px solid var(--color-primary); color: var(--color-primary); background: var(--color-white); cursor: pointer; font-weight: 600; transition: all .2s; }
+  .btn-action:hover { background: var(--color-primary); color: var(--color-white); }
+  .op-post { background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px 20px; margin-bottom: 16px; border-top: 3px solid var(--color-primary); }
+  .op-label { display: inline-block; font-size: 10px; padding: 1px 8px; background: var(--color-primary); color: var(--color-white); border-radius: 3px; font-weight: 700; margin-bottom: 10px; }
+  /* Blog card */
+  .blog-card { display: flex; border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden; margin-bottom: 14px; background: var(--color-white); transition: box-shadow .2s; cursor: pointer; text-decoration: none; }
+  .blog-card:hover { box-shadow: 0 3px 10px rgba(0,0,0,0.12); }
+  .blog-card-thumb { flex-shrink: 0; width: 120px; background: #e8dedd; display: flex; align-items: center; justify-content: center; }
+  .blog-card-body { flex: 1; padding: 10px 14px; min-width: 0; }
+  .blog-card-source { font-size: 10px; color: var(--color-text-muted); margin-bottom: 4px; display: flex; align-items: center; gap: 4px; }
+  .blog-card-source-dot { width: 6px; height: 6px; background: var(--color-primary); border-radius: 50%; flex-shrink: 0; }
+  .blog-card-title { font-size: 13px; font-weight: 700; color: var(--color-text); line-height: 1.5; margin-bottom: 5px; }
+  .blog-card-desc { font-size: 11px; color: var(--color-text-muted); line-height: 1.6; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+  .blog-card-url { font-size: 10px; color: var(--color-text-light); margin-top: 5px; }
+  .op-comment { font-size: 14px; line-height: 1.8; color: var(--color-text); padding-top: 12px; border-top: 1px dashed var(--color-border); margin-top: 4px; }
+  /* Pagination */
+  .pagination { display: flex; align-items: center; justify-content: center; gap: 4px; margin: 14px 0; }
+  .page-btn { min-width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; padding: 0 8px; border-radius: 4px; font-size: 13px; border: 1px solid var(--color-border); background: var(--color-white); color: var(--color-text-muted); cursor: pointer; transition: all .2s; }
+  .page-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
+  .page-btn.current { background: var(--color-primary); border-color: var(--color-primary); color: var(--color-white); font-weight: 700; }
+  /* Comments */
+  .comment-list { display: flex; flex-direction: column; gap: 10px; }
+  .comment-item { background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 14px 16px; transition: background .15s; }
+  .comment-item:hover { background: #fffbfa; }
+  .comment-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .comment-num { font-size: 12px; font-weight: 700; color: var(--color-primary); background: var(--color-primary-light); padding: 1px 8px; border-radius: 3px; min-width: 28px; text-align: center; }
+  .comment-anon { font-size: 12px; color: var(--color-text-muted); font-weight: 600; }
+  .comment-time { font-size: 11px; color: var(--color-text-light); margin-left: auto; }
+  .comment-report { font-size: 10px; color: #cccccc; padding: 1px 6px; border: 1px solid #e0e0e0; border-radius: 3px; cursor: pointer; }
+  .comment-report:hover { color: var(--color-primary); border-color: var(--color-primary); }
+  .comment-body { font-size: 14px; line-height: 1.75; color: var(--color-text); margin-bottom: 10px; white-space: pre-wrap; }
+  .comment-reply-ref { color: var(--color-primary); font-weight: 600; }
+  .comment-images { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+  .comment-img-wrap { border-radius: 4px; overflow: hidden; border: 1px solid var(--color-border); cursor: pointer; }
+  .comment-img-wrap:hover { opacity: .88; }
+  .comment-footer { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .vote-group { display: flex; gap: 6px; align-items: center; }
+  .vote-btn { display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: 14px; font-size: 12px; font-weight: 700; cursor: pointer; transition: all .2s; border: 1px solid transparent; background: none; }
+  .vote-plus { color: var(--color-plus); background: #fff5f3; border-color: #fcc8d8; }
+  .vote-plus:hover { background: var(--color-primary); color: white; border-color: var(--color-primary); }
+  .vote-minus { color: var(--color-text-light); background: #f5f5f5; border-color: #e0e0e0; }
+  .vote-minus:hover { background: #888; color: white; border-color: #888; }
+  .reply-link { font-size: 12px; color: #2a6db5; cursor: pointer; }
+  .reply-link:hover { text-decoration: underline; }
+  .reply-count-link { font-size: 11px; color: var(--color-text-muted); cursor: pointer; text-decoration: underline; }
+  .reply-form-area { background: #fffbf9; border: 1px dashed #f5cfd8; border-radius: var(--radius); padding: 12px; margin-top: 10px; display: none; }
+  .reply-form-area.open { display: block; }
+  .reply-form-area textarea { width: 100%; min-height: 70px; border: 1px solid var(--color-border); border-radius: 4px; padding: 8px; font-family: var(--font-main); font-size: 13px; resize: vertical; outline: none; }
+  .reply-form-area textarea:focus { border-color: var(--color-primary); }
+  .reply-form-btns { display: flex; gap: 8px; justify-content: flex-end; margin-top: 8px; }
+  .btn-submit { background: var(--color-primary); color: white; border: none; padding: 6px 16px; border-radius: 4px; font-size: 13px; font-weight: 600; cursor: pointer; }
+  .btn-cancel { background: var(--color-white); color: var(--color-text-muted); border: 1px solid var(--color-border); padding: 6px 14px; border-radius: 4px; font-size: 13px; cursor: pointer; }
+  .post-form-section { background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px 20px; margin-top: 20px; border-top: 3px solid var(--color-primary); }
+  .post-form-title { font-size: 14px; font-weight: 700; color: var(--color-text); margin-bottom: 12px; }
+  .post-form-textarea { width: 100%; min-height: 90px; border: 1px solid var(--color-border); border-radius: 4px; padding: 10px; font-family: var(--font-main); font-size: 14px; resize: vertical; outline: none; transition: border-color .2s; }
+  .post-form-textarea:focus { border-color: var(--color-primary); }
+  .post-form-actions { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; flex-wrap: wrap; gap: 8px; }
+  .post-form-hint { font-size: 11px; color: var(--color-text-light); }
+  .btn-post { background: var(--color-primary); color: white; border: none; padding: 8px 24px; border-radius: 20px; font-size: 14px; font-weight: 700; cursor: pointer; }
+  .btn-post:hover { background: var(--color-primary-dark); }
+  .sidebar { display: flex; flex-direction: column; gap: 16px; }
+  .sidebar-card { background: var(--color-white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .sidebar-card-title { background: var(--color-primary); color: var(--color-white); font-size: 13px; font-weight: 700; padding: 9px 14px; display: flex; align-items: center; gap: 6px; }
+  .sidebar-topic-list { padding: 6px 0; }
+  .sidebar-topic-item { display: flex; align-items: flex-start; gap: 8px; padding: 9px 14px; border-bottom: 1px solid var(--color-border); transition: background .15s; }
+  .sidebar-topic-item:last-child { border-bottom: none; }
+  .sidebar-topic-item:hover { background: var(--color-primary-light); }
+  .sidebar-rank { flex-shrink: 0; font-size: 11px; font-weight: 700; color: var(--color-text-light); width: 14px; text-align: center; margin-top: 2px; }
+  .sidebar-topic-title { font-size: 12px; color: #2a6db5; line-height: 1.5; cursor: pointer; }
+  .sidebar-topic-title:hover { text-decoration: underline; }
+  .tag-section { padding: 12px 14px; }
+  .tag-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { font-size: 11px; padding: 4px 10px; border-radius: 14px; background: var(--color-tag-bg); color: var(--color-tag-text); font-weight: 600; cursor: pointer; border: 1px solid #f5cfd8; transition: all .2s; white-space: nowrap; }
+  .tag:hover { background: var(--color-primary); color: var(--color-white); border-color: var(--color-primary); }
+  .tag.active { background: var(--color-primary); color: var(--color-white); border-color: var(--color-primary); }
+  .site-footer { background: #3d2b34; color: #c8b8c0; margin-top: 40px; }
+  .footer-inner { max-width: 1080px; margin: 0 auto; padding: 28px 16px 20px; }
+  .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+  .footer-logo img { height: 30px; filter: brightness(0) invert(1); opacity: .85; }
+  .footer-logo-text { font-size: 16px; font-weight: 700; color: #ecdce4; }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 12px; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 14px; margin-top: 6px; }
+  .footer-links a { color: #c8b8c0; transition: color .2s; }
+  .footer-links a:hover { color: var(--color-accent); }
+  .footer-copy { font-size: 11px; color: #9a8590; margin-top: 14px; }
+  @media (max-width: 768px) {
+    .content-layout { grid-template-columns: 1fr; }
+    .site-catch { display: none; }
+    .header-nav a { padding: 8px 12px; font-size: 12px; }
+    .site-title { font-size: 17px; }
+    .logo-wrap img { height: 28px; }
+    .topic-action-btns { margin-left: 0; }
+    .topic-info-bar { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .topic-main-title { font-size: 15px; }
+    .blog-card-thumb { width: 90px; }
+  }
+  .btn-post-topic {
+    display: block;
+    background: var(--color-primary);
+    color: var(--color-white);
+    text-align: center;
+    padding: 13px 16px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    box-shadow: 0 2px 8px rgba(232,137,160,0.30);
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-post-topic:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-1px);
+  }
+  /* コメントフォーム追加スタイル */
+  .post-form-name-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  .post-form-name {
+    flex: 1;
+    min-width: 160px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 8px 10px;
+    font-family: var(--font-main);
+    font-size: 13px;
+    outline: none;
+    transition: border-color .2s;
+  }
+  .post-form-name:focus { border-color: var(--color-primary); }
+  .anon-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .anon-label input[type="checkbox"] {
+    accent-color: var(--color-primary);
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+  }
+  .post-form-img-row {
+    margin-top: 8px;
+    margin-bottom: 6px;
+  }
+  .post-form-img-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border: 1px dashed var(--color-primary);
+    border-radius: 4px;
+    color: var(--color-primary);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s;
+  }
+  .post-form-img-label:hover { background: var(--color-primary-light); }
+  .img-preview-area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .img-preview-item {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+  }
+  .img-preview-item img { width: 100%; height: 100%; object-fit: cover; }
+  .img-preview-remove {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: rgba(0,0,0,0.55);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 11px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-top">
+      <a href="shufuse-community-top.html" class="logo-wrap">
+        <img src="https://shufuse.com/wp-content/themes/simplicity2-custom/images/logo.png" alt="シュフーズ ロゴ">
+        <span class="site-title">コミュニティ</span>
+      </a>
+      <span class="site-catch">✦ シュフのためのおしゃべりコーナー</span>
+    </div>
+    
+  </div>
+</header>
+
+<div class="page-wrapper">
+  <nav class="breadcrumb">
+    <a href="shufuse-community-top.html">シュフーズ コミュニティ</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="#">ニュース</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>俳優・村上虹郎さんが傷害の疑いで書類送検</span>
+  </nav>
+
+  <div class="content-layout">
+    <main class="main-col">
+
+      <div class="topic-header">
+        <span class="topic-category">ニュース</span>
+        <h1 class="topic-main-title">俳優・村上虹郎さんが傷害の疑いで書類送検　当時の交際女性に暴行し全治1か月以上の重傷を負わせた疑い</h1>
+        <div class="topic-info-bar">
+          <span>💬 1,938コメント</span>
+          <span>🕐 2026/06/26(金) 08:26</span>
+          <span>👁 89,412 views</span>
+          <div class="topic-action-btns">
+            <button class="btn-action" onclick="scrollToForm()">💬 コメントする</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="op-post">
+        <span class="op-label">トピック本文</span>
+
+        <a class="blog-card" href="#" onclick="return false;">
+          <div class="blog-card-thumb">
+            <svg width="120" height="90" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg">
+              <rect width="120" height="90" fill="#d8ccc8"/>
+              <rect x="8" y="8" width="104" height="50" rx="3" fill="#c4b4b0"/>
+              <circle cx="60" cy="33" r="14" fill="#a89088" opacity=".7"/>
+              <polygon points="54,25 54,41 70,33" fill="white" opacity=".9"/>
+              <rect x="8" y="66" width="65" height="7" rx="2" fill="#b09088"/>
+              <rect x="8" y="78" width="90" height="5" rx="2" fill="#c4b4b0"/>
+            </svg>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-source">
+              <span class="blog-card-source-dot"></span>
+              TBS NEWS DIG
+            </div>
+            <div class="blog-card-title">【独自】俳優の村上虹郎さんを傷害の疑いで書類送検　おととし当時交際していた女性に対し顔を殴るなどして重傷を負わせたか　今年に入って女性が警視庁に相談</div>
+            <div class="blog-card-desc">捜査関係者によりますと、おととし東京・渋谷区にある自宅で、当時交際していた女性に対し、顔を殴るなどの暴行を複数回にわたって加え、全治1か月以上の重傷を負わせた疑いがもたれているということです。警視庁の任意の調べに対し、村上さんは「けがさせたことは間違いない」と話しているということです。今年に入って、女性から相談があり、警視庁が調べていました。</div>
+            <div class="blog-card-url">newsdig.tbs.co.jp</div>
+          </div>
+        </a>
+
+        <div class="op-comment">ショックなニュースです。俳優の村上虹郎さん（29）が傷害の疑いで書類送検されたとのこと。カムカムエヴリバディや今際の国のアリスなど、数々の話題作に出演されていた方だったので正直かなり驚きました。
+
+全治1か月以上の重傷というのも深刻です。暴力は絶対にいけないこと。被害女性のことがとても心配です。みなさんはこのニュース、どう思いましたか？</div>
+      </div>
+
+      <div class="pagination">
+        <span class="page-btn current">1</span>
+        <a href="shufuse-community-topic.html" class="page-btn">2</a>
+        <a href="shufuse-community-topic.html" class="page-btn">3</a>
+        <a href="shufuse-community-topic.html" class="page-btn">4</a>
+        <span style="font-size:13px;color:#aaa;padding:0 4px;">…</span>
+        <a href="shufuse-community-topic.html" class="page-btn">39</a>
+        <a href="shufuse-community-topic.html" class="page-btn">次 ›</a>
+      </div>
+
+      <div class="comment-list" id="comments">
+
+        <div class="comment-item" id="c1">
+          <div class="comment-header">
+            <span class="comment-num">1</span>
+            <span class="comment-anon">匿名</span>
+            <span class="comment-time">2026/06/26(金) 08:26:42</span>
+            <span class="comment-report">通報</span>
+          </div>
+          <div class="comment-body">ドラマで見ていた俳優さんだったので、本当にびっくりしました。全治1か月以上って相当な暴行ですよね…。被害女性のことが心配です。</div>
+          <div class="comment-footer">
+            <div class="vote-group">
+              <button class="vote-btn vote-plus" onclick="vote(this)">＋ <span>847</span></button>
+              <button class="vote-btn vote-minus" onclick="vote(this)">－ <span>12</span></button>
+            </div>
+            <span class="reply-link" onclick="toggleReplyForm(this)">↩ 返信</span>
+          </div>
+          <div class="reply-form-area">
+            <textarea placeholder="返信を入力してください…"></textarea>
+            <div class="reply-form-btns"><button class="btn-cancel" onclick="closeReplyForm(this)">キャンセル</button><button class="btn-submit">投稿する</button></div>
+          </div>
+        </div>
+
+        <div class="comment-item" id="c2">
+          <div class="comment-header">
+            <span class="comment-num">2</span>
+            <span class="comment-anon">匿名</span>
+            <span class="comment-time">2026/06/26(金) 08:26:57</span>
+            <span class="comment-report">通報</span>
+          </div>
+          <div class="comment-body">UAさんとの息子さんなんですね。親御さんも有名な方だっただけに余計に驚きます。どんな理由があっても暴力は絶対ダメ。</div>
+          <div class="comment-images">
+            <div class="comment-img-wrap">
+              <svg width="200" height="130" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="130" fill="#e8e0dc"/>
+                <rect x="0" y="0" width="200" height="85" fill="#d4c4be"/>
+                <rect x="15" y="95" width="110" height="10" rx="3" fill="#b8a8a4"/>
+                <rect x="15" y="110" width="160" height="8" rx="3" fill="#c8b8c0"/>
+                <text x="100" y="50" text-anchor="middle" font-size="30" fill="#a89088">📰</text>
+              </svg>
+            </div>
+          </div>
+          <div class="comment-footer">
+            <div class="vote-group">
+              <button class="vote-btn vote-plus" onclick="vote(this)">＋ <span>712</span></button>
+              <button class="vote-btn vote-minus" onclick="vote(this)">－ <span>8</span></button>
+            </div>
+            <span class="reply-link" onclick="toggleReplyForm(this)">↩ 返信</span>
+          </div>
+          <div class="reply-form-area">
+            <textarea placeholder="返信を入力してください…"></textarea>
+            <div class="reply-form-btns"><button class="btn-cancel" onclick="closeReplyForm(this)">キャンセル</button><button class="btn-submit">投稿する</button></div>
+          </div>
+        </div>
+
+        <div class="comment-item" id="c3">
+          <div class="comment-header">
+            <span class="comment-num">3</span>
+            <span class="comment-anon">匿名</span>
+            <span class="comment-time">2026/06/26(金) 08:27:02</span>
+            <span class="comment-report">通報</span>
+          </div>
+          <div class="comment-body">カムカムエヴリバディで好感持ってたのに…本当にがっかりです。交際相手への暴力は絶対に許せない。</div>
+          <div class="comment-footer">
+            <div class="vote-group">
+              <button class="vote-btn vote-plus" onclick="vote(this)">＋ <span>658</span></button>
+              <button class="vote-btn vote-minus" onclick="vote(this)">－ <span>5</span></button>
+            </div>
+            <span class="reply-link" onclick="toggleReplyForm(this)">↩ 返信</span>
+          </div>
+          <div class="reply-form-area">
+            <textarea placeholder="返信を入力してください…"></textarea>
+            <div class="reply-form-btns"><button class="btn-cancel" onclick="closeReplyForm(this)">キャンセル</button><button class="btn-submit">投稿する</button></div>
+          </div>
+        </div>
+
+        <div class="comment-item" id="c4">
+          <div class="comment-header">
+            <span class="comment-num">4</span>
+            <span class="comment-anon">匿名</span>
+            <span class="comment-time">2026/06/26(金) 08:27:04</span>
+            <span class="comment-report">通報</span>
+          </div>
+          <div class="comment-body">メンタルの不調で活動休止していた時期がありましたよね。その期間に起きたことなのかな…と思うと色々複雑です。でも理由がどうあれ暴力は許せない。被害女性を第一に考えてほしいです。</div>
+          <div class="comment-images">
+            <div class="comment-img-wrap">
+              <svg width="170" height="115" viewBox="0 0 170 115" xmlns="http://www.w3.org/2000/svg">
+                <rect width="170" height="115" fill="#ddd0cc"/>
+                <rect x="0" y="0" width="170" height="72" fill="#c8b8c0"/>
+                <rect x="12" y="80" width="90" height="9" rx="2" fill="#b09088"/>
+                <rect x="12" y="94" width="140" height="7" rx="2" fill="#c4b0ac"/>
+                <text x="85" y="42" text-anchor="middle" font-size="24" fill="#a49090">📺</text>
+              </svg>
+            </div>
+            <div class="comment-img-wrap">
+              <svg width="170" height="115" viewBox="0 0 170 115" xmlns="http://www.w3.org/2000/svg">
+                <rect width="170" height="115" fill="#e4d8d4"/>
+                <rect x="0" y="0" width="170" height="72" fill="#d0bfba"/>
+                <rect x="12" y="80" width="110" height="9" rx="2" fill="#b09088"/>
+                <rect x="12" y="94" width="80" height="7" rx="2" fill="#c4b0ac"/>
+                <text x="85" y="42" text-anchor="middle" font-size="24" fill="#a08888">🎬</text>
+              </svg>
+            </div>
+          </div>
+          <div class="comment-footer">
+            <div class="vote-group">
+              <button class="vote-btn vote-plus" onclick="vote(this)">＋ <span>573</span></button>
+              <button class="vote-btn vote-minus" onclick="vote(this)">－ <span>7</span></button>
+            </div>
+            <span class="reply-link" onclick="toggleReplyForm(this)">↩ 返信</span>
+          </div>
+          <div class="reply-form-area">
+            <textarea placeholder="返信を入力してください…"></textarea>
+            <div class="reply-form-btns"><button class="btn-cancel" onclick="closeReplyForm(this)">キャンセル</button><button class="btn-submit">投稿する</button></div>
+          </div>
+        </div>
+
+        <div class="comment-item" id="c5">
+          <div class="comment-header">
+            <span class="comment-num">5</span>
+            <span class="comment-anon">匿名</span>
+            <span class="comment-time">2026/06/26(金) 08:27:10</span>
+            <span class="comment-report">通報</span>
+          </div>
+          <div class="comment-body">重傷って…顔を殴るって本当にひどい。絶対に許せない行為です。被害女性が今は元気でいられることを願います。</div>
+          <div class="comment-footer">
+            <div class="vote-group">
+              <button class="vote-btn vote-plus" onclick="vote(this)">＋ <span>891</span></button>
+              <button class="vote-btn vote-minus" onclick="vote(this)">－ <span>3</span></button>
+            </div>
+            <span class="reply-link" onclick="toggleReplyForm(this)">↩ 返信</span>
+          </div>
+          <div class="reply-form-area">
+            <textarea placeholder="返信を入力してください…"></textarea>
+            <div class="reply-form-btns"><button class="btn-cancel" onclick="closeReplyForm(this)">キャンセル</button><button class="btn-submit">投稿する</button></div>
+          </div>
+        </div>
+
+        <div class="comment-item" id="c6">
+          <div class="comment-header">
+            <span class="comment-num">6</span>
+            <span class="comment-anon">匿名</span>
+            <span class="comment-time">2026/06/26(金) 08:27:13</span>
+            <span class="comment-report">通報</span>
+          </div>
+          <div class="comment-body">今年放映予定のドラマはどうなるんでしょうか。現場スタッフさんや共演者さんのことを思うと、本当に迷惑な話ですよね…。</div>
+          <div class="comment-footer">
+            <div class="vote-group">
+              <button class="vote-btn vote-plus" onclick="vote(this)">＋ <span>431</span></button>
+              <button class="vote-btn vote-minus" onclick="vote(this)">－ <span>14</span></button>
+            </div>
+            <span class="reply-link" onclick="toggleReplyForm(this)">↩ 返信</span>
+          </div>
+          <div class="reply-form-area">
+            <textarea placeholder="返信を入力してください…"></textarea>
+            <div class="reply-form-btns"><button class="btn-cancel" onclick="closeReplyForm(this)">キャンセル</button><button class="btn-submit">投稿する</button></div>
+          </div>
+        </div>
+
+        <div class="comment-item" id="c7">
+          <div class="comment-header">
+            <span class="comment-num">7</span>
+            <span class="comment-anon">匿名</span>
+            <span class="comment-time">2026/06/26(金) 08:36:39</span>
+            <span class="comment-report">通報</span>
+          </div>
+          <div class="comment-body">7月から新ドラマが始まる予定だったんですよね。これどうなるんだろう…。</div>
+          <div class="comment-images">
+            <div class="comment-img-wrap">
+              <svg width="310" height="96" viewBox="0 0 310 96" xmlns="http://www.w3.org/2000/svg">
+                <rect width="310" height="96" rx="6" fill="#f5f0ee" stroke="#e0d4d0" stroke-width="1"/>
+                <rect x="0" y="0" width="82" height="96" rx="5" fill="#c8b8c0"/>
+                <text x="41" y="54" text-anchor="middle" font-size="26" fill="#9a7c74">🎭</text>
+                <rect x="96" y="14" width="198" height="12" rx="3" fill="#9a8888"/>
+                <rect x="96" y="32" width="155" height="8" rx="2" fill="#b8a8a4"/>
+                <rect x="96" y="46" width="198" height="7" rx="2" fill="#c4b4b0"/>
+                <rect x="96" y="58" width="130" height="7" rx="2" fill="#c4b4b0"/>
+                <rect x="96" y="76" width="75" height="7" rx="2" fill="#d4c4be"/>
+              </svg>
+            </div>
+          </div>
+          <div class="comment-footer">
+            <div class="vote-group">
+              <button class="vote-btn vote-plus" onclick="vote(this)">＋ <span>312</span></button>
+              <button class="vote-btn vote-minus" onclick="vote(this)">－ <span>2</span></button>
+            </div>
+            <span class="reply-link" onclick="toggleReplyForm(this)">↩ 返信</span>
+          </div>
+          <div class="reply-form-area">
+            <textarea placeholder="返信を入力してください…"></textarea>
+            <div class="reply-form-btns"><button class="btn-cancel" onclick="closeReplyForm(this)">キャンセル</button><button class="btn-submit">投稿する</button></div>
+          </div>
+        </div>
+
+        <div class="comment-item" id="c8">
+          <div class="comment-header">
+            <span class="comment-num">8</span>
+            <span class="comment-anon">匿名</span>
+            <span class="comment-time">2026/06/26(金) 08:37:06</span>
+            <span class="comment-report">通報</span>
+          </div>
+          <div class="comment-body">俳優として才能があっただけに、本当に残念です。でも暴力は才能でカバーできるものではない。被害者に寄り添った対応をしてほしいと思います。</div>
+          <div class="comment-footer">
+            <div class="vote-group">
+              <button class="vote-btn vote-plus" onclick="vote(this)">＋ <span>386</span></button>
+              <button class="vote-btn vote-minus" onclick="vote(this)">－ <span>6</span></button>
+            </div>
+            <span class="reply-link" onclick="toggleReplyForm(this)">↩ 返信</span>
+          </div>
+          <div class="reply-form-area">
+            <textarea placeholder="返信を入力してください…"></textarea>
+            <div class="reply-form-btns"><button class="btn-cancel" onclick="closeReplyForm(this)">キャンセル</button><button class="btn-submit">投稿する</button></div>
+          </div>
+        </div>
+
+        <div class="comment-item" id="c9">
+          <div class="comment-header">
+            <span class="comment-num">9</span>
+            <span class="comment-anon">匿名</span>
+            <span class="comment-time">2026/06/26(金) 08:38:05</span>
+            <span class="comment-report">通報</span>
+          </div>
+          <div class="comment-body"><span class="comment-reply-ref">&gt;&gt;6</span> 共演者さんも大変ですよね。何の落ち度もない方々が振り回されるのが本当につらい。しっかり本人が責任を取ってほしいです。</div>
+          <div class="comment-footer">
+            <div class="vote-group">
+              <button class="vote-btn vote-plus" onclick="vote(this)">＋ <span>267</span></button>
+              <button class="vote-btn vote-minus" onclick="vote(this)">－ <span>1</span></button>
+            </div>
+            <span class="reply-link" onclick="toggleReplyForm(this)">↩ 返信</span>
+          </div>
+          <div class="reply-form-area">
+            <textarea placeholder="返信を入力してください…"></textarea>
+            <div class="reply-form-btns"><button class="btn-cancel" onclick="closeReplyForm(this)">キャンセル</button><button class="btn-submit">投稿する</button></div>
+          </div>
+        </div>
+
+        <div class="comment-item" id="c10">
+          <div class="comment-header">
+            <span class="comment-num">10</span>
+            <span class="comment-anon">匿名</span>
+            <span class="comment-time">2026/06/26(金) 08:39:18</span>
+            <span class="comment-report">通報</span>
+          </div>
+          <div class="comment-body">カムカムエヴリバディ、本当に良かったんですよね。過去作を見返すのも複雑な気持ちになりそうで…。</div>
+          <div class="comment-images">
+            <div class="comment-img-wrap">
+              <svg width="175" height="120" viewBox="0 0 175 120" xmlns="http://www.w3.org/2000/svg">
+                <rect width="175" height="120" fill="#ddd0cc"/>
+                <rect x="0" y="0" width="175" height="78" fill="#c8b8c0"/>
+                <circle cx="87" cy="39" r="20" fill="#a89088" opacity=".7"/>
+                <polygon points="80,30 80,48 98,39" fill="white" opacity=".9"/>
+                <rect x="12" y="86" width="95" height="9" rx="2" fill="#b09088"/>
+                <rect x="12" y="100" width="145" height="7" rx="2" fill="#c4b0ac"/>
+              </svg>
+            </div>
+            <div class="comment-img-wrap">
+              <svg width="175" height="120" viewBox="0 0 175 120" xmlns="http://www.w3.org/2000/svg">
+                <rect width="175" height="120" fill="#e4d8d4"/>
+                <rect x="0" y="0" width="175" height="78" fill="#d0bfba"/>
+                <circle cx="87" cy="39" r="20" fill="#b8a09a" opacity=".7"/>
+                <polygon points="80,30 80,48 98,39" fill="white" opacity=".9"/>
+                <rect x="12" y="86" width="110" height="9" rx="2" fill="#b09088"/>
+                <rect x="12" y="100" width="75" height="7" rx="2" fill="#c4b0ac"/>
+              </svg>
+            </div>
+          </div>
+          <div class="comment-footer">
+            <div class="vote-group">
+              <button class="vote-btn vote-plus" onclick="vote(this)">＋ <span>198</span></button>
+              <button class="vote-btn vote-minus" onclick="vote(this)">－ <span>9</span></button>
+            </div>
+            <span class="reply-link" onclick="toggleReplyForm(this)">↩ 返信</span>
+          </div>
+          <div class="reply-form-area">
+            <textarea placeholder="返信を入力してください…"></textarea>
+            <div class="reply-form-btns"><button class="btn-cancel" onclick="closeReplyForm(this)">キャンセル</button><button class="btn-submit">投稿する</button></div>
+          </div>
+        </div>
+
+        <div class="comment-item" id="c11">
+          <div class="comment-header">
+            <span class="comment-num">11</span>
+            <span class="comment-anon">匿名</span>
+            <span class="comment-time">2026/06/26(金) 08:40:00</span>
+            <span class="comment-report">通報</span>
+          </div>
+          <div class="comment-body">書類送検で済んでいるのが不思議な気もします。全治1か月以上の重傷って相当な暴行ですよね。被害者の方が適切に守られてほしいです。</div>
+          <div class="comment-footer">
+            <div class="vote-group">
+              <button class="vote-btn vote-plus" onclick="vote(this)">＋ <span>541</span></button>
+              <button class="vote-btn vote-minus" onclick="vote(this)">－ <span>4</span></button>
+            </div>
+            <span class="reply-link" onclick="toggleReplyForm(this)">↩ 返信</span>
+          </div>
+          <div class="reply-form-area">
+            <textarea placeholder="返信を入力してください…"></textarea>
+            <div class="reply-form-btns"><button class="btn-cancel" onclick="closeReplyForm(this)">キャンセル</button><button class="btn-submit">投稿する</button></div>
+          </div>
+        </div>
+
+        <div class="comment-item" id="c12">
+          <div class="comment-header">
+            <span class="comment-num">12</span>
+            <span class="comment-anon">匿名</span>
+            <span class="comment-time">2026/06/26(金) 08:41:19</span>
+            <span class="comment-report">通報</span>
+          </div>
+          <div class="comment-body">DVって一度始まると止まらないことが多いって聞きます。被害女性が勇気を持って相談してくれたことが、他の被害を防ぐことにもつながると思う。声を上げることの大切さを改めて感じます。</div>
+          <div class="comment-footer">
+            <div class="vote-group">
+              <button class="vote-btn vote-plus" onclick="vote(this)">＋ <span>623</span></button>
+              <button class="vote-btn vote-minus" onclick="vote(this)">－ <span>2</span></button>
+            </div>
+            <span class="reply-link" onclick="toggleReplyForm(this)">↩ 返信</span>
+          </div>
+          <div class="reply-form-area">
+            <textarea placeholder="返信を入力してください…"></textarea>
+            <div class="reply-form-btns"><button class="btn-cancel" onclick="closeReplyForm(this)">キャンセル</button><button class="btn-submit">投稿する</button></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pagination" style="margin-top:20px;">
+        <span class="page-btn current">1</span>
+        <a href="shufuse-community-topic.html" class="page-btn">2</a>
+        <a href="shufuse-community-topic.html" class="page-btn">3</a>
+        <a href="shufuse-community-topic.html" class="page-btn">4</a>
+        <span style="font-size:13px;color:#aaa;padding:0 4px;">…</span>
+        <a href="shufuse-community-topic.html" class="page-btn">39</a>
+        <a href="shufuse-community-topic.html" class="page-btn">次 ›</a>
+      </div>
+
+      <div class="post-form-section" id="form">
+        <div class="post-form-title">💬 コメントを投稿する</div>
+        <div class="post-form-name-row">
+          <input type="text" class="post-form-name" id="commentName" placeholder="お名前">
+          <label class="anon-label">
+            <input type="checkbox" id="anonCheck" onchange="toggleAnon()"> 匿名で投稿
+          </label>
+        </div>
+        <textarea class="post-form-textarea" placeholder="コメントをここに入力"></textarea>
+        <div class="post-form-img-row">
+          <label class="post-form-img-label" for="commentImg">
+            <span>📷 画像を添付</span>
+            <input type="file" id="commentImg" accept="image/*" multiple style="display:none;" onchange="previewImages(event)">
+          </label>
+          <div id="imgPreviewArea" class="img-preview-area"></div>
+        </div>
+        <div class="post-form-actions">
+          <span class="post-form-hint">※誹謗中傷・個人情報の書き込みはご遠慮ください</span>
+          <button class="btn-post">投稿する</button>
+        </div>
+      </div>
+
+    </main>
+
+    <aside class="sidebar">
+      <!-- 投稿ボタン -->
+      <a href="shufuse-community-post.html" class="btn-post-topic">✏️ トピックを投稿する</a>
+
+
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">🔗 関連トピック</div>
+        <div class="sidebar-topic-list">
+          <div class="sidebar-topic-item"><span class="sidebar-rank">1</span><a href="shufuse-community-topic.html" class="sidebar-topic-title">DVを受けていた方、どうやって逃げましたか？経験談を聞かせてください</a></div>
+          <div class="sidebar-topic-item"><span class="sidebar-rank">2</span><a href="shufuse-community-topic.html" class="sidebar-topic-title">パートナーの暴力に気づいたとき、友人に相談できましたか？</a></div>
+          <div class="sidebar-topic-item"><span class="sidebar-rank">3</span><a href="shufuse-community-topic.html" class="sidebar-topic-title">好きだった俳優さんがスキャンダル…みなさんどう気持ちを切り替えましたか</a></div>
+          <div class="sidebar-topic-item"><span class="sidebar-rank">4</span><a href="shufuse-community-topic.html" class="sidebar-topic-title">書類送検と逮捕の違いってわかりやすく教えて</a></div>
+          <div class="sidebar-topic-item"><span class="sidebar-rank">5</span><a href="shufuse-community-topic.html" class="sidebar-topic-title">芸能人の不祥事、子どもへの説明どうしてますか？</a></div>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">🔥 今日の人気トピック</div>
+        <div class="sidebar-topic-list">
+          <div class="sidebar-topic-item"><span class="sidebar-rank">1</span><a href="shufuse-community-topic.html" class="sidebar-topic-title">俳優・村上虹郎さんが傷害の疑いで書類送検</a></div>
+          <div class="sidebar-topic-item"><span class="sidebar-rank">2</span><a href="shufuse-community-topic.html" class="sidebar-topic-title">夫が家事を手伝ってくれない…うまく巻き込む方法</a></div>
+          <div class="sidebar-topic-item"><span class="sidebar-rank">3</span><a href="shufuse-community-topic.html" class="sidebar-topic-title">食費を月2万円台に抑えるための節約術</a></div>
+          <div class="sidebar-topic-item"><span class="sidebar-rank">4</span><a href="shufuse-community-topic.html" class="sidebar-topic-title">プチプラコスメで本当に使えると思った商品</a></div>
+          <div class="sidebar-topic-item"><span class="sidebar-rank">5</span><a href="shufuse-community-topic.html" class="sidebar-topic-title">電気代・ガス代の値上がり、節約対策を教えて</a></div>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">🗂 カテゴリー</div>
+        <div class="tag-section">
+          <div class="tag-list">
+            <span class="tag">恋愛・結婚</span>
+            <span class="tag">美容・コスメ</span>
+            <span class="tag">ファッション</span>
+            <span class="tag">料理・食べ物</span>
+            <span class="tag">家族・子育て</span>
+            <span class="tag">芸能人</span>
+            <span class="tag active">ニュース</span>
+            <span class="tag">質問・雑談</span>
+            <span class="tag">仕事・キャリア</span>
+            <span class="tag">健康・ダイエット</span>
+            <span class="tag">節約・お金</span>
+            <span class="tag">家事・掃除</span>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="https://shufuse.com/wp-content/themes/simplicity2-custom/images/logo.png" alt="シュフーズ">
+      <span class="footer-logo-text">コミュニティ</span>
+    </div>
+    <nav class="footer-links">
+      <a href="#">運営会社</a>
+      <a href="#">お問い合わせ</a>
+      <a href="#">よくある質問</a>
+      <a href="#">利用規約</a>
+      <a href="#">プライバシーポリシー</a>
+      <a href="#">シュフーズ TOP</a>
+    </nav>
+    <p class="footer-copy">© 2026 シュフーズ All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  function toggleReplyForm(btn) {
+    const form = btn.closest('.comment-item').querySelector('.reply-form-area');
+    if (form) form.classList.toggle('open');
+  }
+  function closeReplyForm(btn) {
+    btn.closest('.reply-form-area').classList.remove('open');
+  }
+  function vote(btn) {
+    const span = btn.querySelector('span');
+    span.textContent = parseInt(span.textContent) + 1;
+    btn.style.opacity = '.7';
+    btn.style.pointerEvents = 'none';
+  }
+  function scrollToForm() {
+    document.getElementById('form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function toggleAnon() {
+    const cb = document.getElementById('anonCheck');
+    const nameInput = document.getElementById('commentName');
+    if (cb.checked) {
+      nameInput.value = '';
+      nameInput.disabled = true;
+      nameInput.placeholder = '匿名';
+    } else {
+      nameInput.disabled = false;
+      nameInput.placeholder = 'お名前';
+    }
+  }
+  function previewImages(e) {
+    const area = document.getElementById('imgPreviewArea');
+    Array.from(e.target.files).forEach(file => {
+      const url = URL.createObjectURL(file);
+      const wrap = document.createElement('div');
+      wrap.className = 'img-preview-item';
+      const img = document.createElement('img');
+      img.src = url;
+      const btn = document.createElement('button');
+      btn.className = 'img-preview-remove';
+      btn.textContent = '×';
+      btn.onclick = () => wrap.remove();
+      wrap.appendChild(img);
+      wrap.appendChild(btn);
+      area.appendChild(wrap);
+    });
+  }
+</script>
+</body>
+</html>
