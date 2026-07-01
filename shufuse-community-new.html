@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新着トピック - シュフーズ コミュニティ</title>
+<style>
+  :root {
+    --color-primary: #e889a0;
+    --color-primary-dark: #c9608a;
+    --color-primary-light: #fdf1f5;
+    --color-accent: #f7a9c0;
+    --color-text: #333333;
+    --color-text-muted: #888888;
+    --color-text-light: #aaaaaa;
+    --color-border: #e8e0dc;
+    --color-bg: #faf8f7;
+    --color-white: #ffffff;
+    --color-tag-bg: #fff0f5;
+    --color-tag-text: #c9608a;
+    --color-rank-1: #e889a0;
+    --color-rank-2: #f0924e;
+    --color-rank-3: #f5b94e;
+    --color-rank-other: #b5b5b5;
+    --font-main: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Meiryo', sans-serif;
+    --radius: 6px;
+    --shadow: 0 1px 4px rgba(0,0,0,0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-main);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ========== HEADER ========== */
+  .site-header {
+    background: var(--color-white);
+    border-bottom: 3px solid var(--color-primary);
+    box-shadow: 0 2px 6px rgba(232,96,76,0.10);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 12px 16px 0;
+  }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 8px;
+  }
+
+  .logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-wrap img {
+    height: 36px;
+    width: auto;
+  }
+
+  .site-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: 0.04em;
+  }
+
+  .site-catch {
+    font-size: 11px;
+    color: var(--color-text-muted);
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  .header-nav {
+    display: flex;
+    gap: 0;
+    border-top: 1px solid var(--color-border);
+    margin-top: 2px;
+  }
+
+  .header-nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .header-nav a:hover,
+  .header-nav a.active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+  }
+
+  .header-nav a .nav-icon {
+    font-size: 15px;
+  }
+
+  /* ========== LAYOUT ========== */
+  .page-wrapper {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 20px 16px;
+  }
+
+  .content-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 24px;
+    align-items: start;
+  }
+
+  /* ========== MAIN COLUMN ========== */
+  .main-col {
+    min-width: 0;
+  }
+
+  /* TOPIC LIST */
+  .topic-list {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .topic-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--color-border);
+    transition: background 0.15s;
+  }
+
+  .topic-item:last-child { border-bottom: none; }
+
+  .topic-item:hover {
+    background: var(--color-primary-light);
+  }
+
+  .topic-icon {
+    flex-shrink: 0;
+    font-size: 18px;
+    margin-top: 2px;
+    line-height: 1;
+  }
+
+  .topic-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .topic-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2a6db5;
+    line-height: 1.5;
+    display: block;
+    margin-bottom: 4px;
+    cursor: pointer;
+  }
+
+  .topic-title:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  .topic-meta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .topic-meta-item {
+    font-size: 11px;
+    color: var(--color-text-light);
+  }
+
+  .topic-meta-item.comments {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  .topic-meta-item.comments::before {
+    content: '💬';
+    font-size: 11px;
+  }
+
+  .topic-cat {
+    font-size: 10px;
+    padding: 1px 7px;
+    border-radius: 10px;
+    background: var(--color-tag-bg);
+    color: var(--color-tag-text);
+    font-weight: 600;
+  }
+
+  /* ========== SIDEBAR ========== */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .sidebar-card {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .sidebar-card-title {
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 9px 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.03em;
+  }
+
+  .sidebar-topic-list {
+    padding: 6px 0;
+  }
+
+  .sidebar-topic-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--color-border);;
+    transition: background 0.15s;
+  }
+
+  .sidebar-topic-item:last-child { border-bottom: none; }
+
+  .sidebar-topic-item:hover { background: var(--color-primary-light); }
+
+  .sidebar-rank {
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--color-text-light);
+    width: 14px;
+    text-align: center;
+    margin-top: 2px;
+  }
+
+  .sidebar-topic-title {
+    font-size: 12px;
+    color: #2a6db5;
+    line-height: 1.5;
+    cursor: pointer;
+  }
+
+  .sidebar-topic-title:hover { text-decoration: underline; }
+
+  /* CATEGORY TAGS */
+  .tag-section { padding: 12px 14px; }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 14px;
+    background: var(--color-tag-bg);
+    color: var(--color-tag-text);
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid #f5cfd8;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .tag:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+  }
+
+  /* ========== FOOTER ========== */
+  .site-footer {
+    background: #3d2b34;
+    color: #c8b8c0;
+    margin-top: 40px;
+  }
+
+  .footer-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 28px 16px 20px;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .footer-logo img {
+    height: 30px;
+    filter: brightness(0) invert(1);
+    opacity: 0.85;
+  }
+
+  .footer-logo-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ecdce4;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    font-size: 12px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 14px;
+    margin-top: 6px;
+  }
+
+  .footer-links a {
+    color: #c8b8c0;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--color-accent); }
+
+  .footer-copy {
+    font-size: 11px;
+    color: #9a8590;
+    margin-top: 14px;
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 768px) {
+    .content-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .site-catch { display: none; }
+
+    .header-nav a {
+      padding: 8px 12px;
+      font-size: 12px;
+    }
+
+    .site-title { font-size: 17px; }
+
+    .logo-wrap img { height: 28px; }
+  }
+
+  .btn-post-topic {
+    display: block;
+    background: var(--color-primary);
+    color: var(--color-white);
+    text-align: center;
+    padding: 13px 16px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    box-shadow: 0 2px 8px rgba(232,137,160,0.30);
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-post-topic:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-1px);
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-top">
+      <a href="index.html" class="logo-wrap">
+        <img src="https://shufuse.com/wp-content/themes/simplicity2-custom/images/logo.png" alt="シュフーズ ロゴ">
+        <span class="site-title">コミュニティ</span>
+      </a>
+      <span class="site-catch">✦ シュフのためのおしゃべりコーナー</span>
+    </div>
+    <nav class="header-nav">
+      <a href="index.html"><span class="nav-icon">🔥</span>注目トピック</a>
+      <a href="shufuse-community-new.html" class="active"><span class="nav-icon">🆕</span>新着トピック</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ========== MAIN ========== -->
+<div class="page-wrapper">
+  <div class="content-layout">
+
+    <!-- LEFT COLUMN -->
+    <main class="main-col">
+      <ul class="topic-list" style="list-style:none;">
+
+        <li class="topic-item">
+          <div class="topic-icon">✏️</div>
+          <div class="topic-body">
+            <a href="shufuse-community-topic.html" class="topic-title">在宅ワークを始めたいけど何がいいかわからない…経験者に聞きたい！</a>
+            <div class="topic-meta">
+              <span class="topic-cat">質問・雑談</span>
+              <span class="topic-meta-item comments">3コメント</span>
+              <span class="topic-meta-item">たった今</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="topic-item">
+          <div class="topic-icon">✏️</div>
+          <div class="topic-body">
+            <a href="shufuse-community-topic.html" class="topic-title">夏の紫外線対策、みなさんは何使ってますか？おすすめ日焼け止め教えて</a>
+            <div class="topic-meta">
+              <span class="topic-cat">美容・コスメ</span>
+              <span class="topic-meta-item comments">5コメント</span>
+              <span class="topic-meta-item">2分前</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="topic-item">
+          <div class="topic-icon">✏️</div>
+          <div class="topic-body">
+            <a href="shufuse-community-topic.html" class="topic-title">子どもの習い事、何をさせるか迷っています。小学生低学年のおすすめは？</a>
+            <div class="topic-meta">
+              <span class="topic-cat">家族・育児</span>
+              <span class="topic-meta-item comments">8コメント</span>
+              <span class="topic-meta-item">5分前</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="topic-item">
+          <div class="topic-icon">✏️</div>
+          <div class="topic-body">
+            <a href="shufuse-community-topic.html" class="topic-title">少子化対策の新制度、実際に使えそう？みなさんの率直な意見を聞かせて</a>
+            <div class="topic-meta">
+              <span class="topic-cat">ニュース</span>
+              <span class="topic-meta-item comments">12コメント</span>
+              <span class="topic-meta-item">9分前</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="topic-item">
+          <div class="topic-icon">✏️</div>
+          <div class="topic-body">
+            <a href="shufuse-community-topic.html" class="topic-title">家計管理アプリどれがおすすめ？使ってみた感想を教えてください</a>
+            <div class="topic-meta">
+              <span class="topic-cat">お金・節約</span>
+              <span class="topic-meta-item comments">17コメント</span>
+              <span class="topic-meta-item">14分前</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="topic-item">
+          <div class="topic-icon">✏️</div>
+          <div class="topic-body">
+            <a href="shufuse-community-topic.html" class="topic-title">40代から始めて良かった趣味があったら教えてください！</a>
+            <div class="topic-meta">
+              <span class="topic-cat">趣味</span>
+              <span class="topic-meta-item comments">21コメント</span>
+              <span class="topic-meta-item">20分前</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="topic-item">
+          <div class="topic-icon">✏️</div>
+          <div class="topic-body">
+            <a href="shufuse-community-topic.html" class="topic-title">子どもの貧困、過去最悪水準に…ひとり親家庭の厳しい現実をどう思う？</a>
+            <div class="topic-meta">
+              <span class="topic-cat">ニュース</span>
+              <span class="topic-meta-item comments">29コメント</span>
+              <span class="topic-meta-item">28分前</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="topic-item">
+          <div class="topic-icon">✏️</div>
+          <div class="topic-body">
+            <a href="shufuse-community-topic.html" class="topic-title">40代、白髪ケアどうしてる？染める？活かす？みなさんの選択を聞かせて</a>
+            <div class="topic-meta">
+              <span class="topic-cat">美容・コスメ</span>
+              <span class="topic-meta-item comments">34コメント</span>
+              <span class="topic-meta-item">35分前</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="topic-item">
+          <div class="topic-icon">✏️</div>
+          <div class="topic-body">
+            <a href="shufuse-community-topic.html" class="topic-title">近所のスーパー、値上がりが激しすぎる…みなさんの近くはどうですか？</a>
+            <div class="topic-meta">
+              <span class="topic-cat">家事・暮らし</span>
+              <span class="topic-meta-item comments">41コメント</span>
+              <span class="topic-meta-item">43分前</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="topic-item">
+          <div class="topic-icon">✏️</div>
+          <div class="topic-body">
+            <a href="shufuse-community-topic.html" class="topic-title">今年の夏休み、子どもとどこに行く予定ですか？おすすめスポット教えて！</a>
+            <div class="topic-meta">
+              <span class="topic-cat">おでかけ</span>
+              <span class="topic-meta-item comments">58コメント</span>
+              <span class="topic-meta-item">1時間前</span>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </main>
+
+    <!-- RIGHT SIDEBAR -->
+    <aside class="sidebar">
+
+      <!-- 投稿ボタン -->
+      <a href="shufuse-community-post.html" class="btn-post-topic">✏️ トピックを投稿する</a>
+
+      <!-- ニュースに関するトピ -->
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">📰 ニュースに関するトピ</div>
+        <div class="sidebar-topic-list">
+          <div class="sidebar-topic-item">
+            <span class="sidebar-rank">1</span>
+            <a href="shufuse-community-topic.html" class="sidebar-topic-title">俳優・村上虹郎さんが傷害の疑いで書類送検　当時の交際女性に暴行</a>
+          </div>
+          <div class="sidebar-topic-item">
+            <span class="sidebar-rank">2</span>
+            <a href="shufuse-community-topic.html" class="sidebar-topic-title">電気代・ガス代また値上がり…政府の補助金終了でどう変わる？</a>
+          </div>
+          <div class="sidebar-topic-item">
+            <span class="sidebar-rank">3</span>
+            <a href="shufuse-community-topic.html" class="sidebar-topic-title">子どもの貧困、過去最悪水準に…ひとり親家庭の厳しい現実</a>
+          </div>
+          <div class="sidebar-topic-item">
+            <span class="sidebar-rank">4</span>
+            <a href="shufuse-community-topic.html" class="sidebar-topic-title">食料品の値上がりが止まらない…家計への影響をみんなで語ろう</a>
+          </div>
+          <div class="sidebar-topic-item">
+            <span class="sidebar-rank">5</span>
+            <a href="shufuse-community-topic.html" class="sidebar-topic-title">少子化対策の新制度、実際に使えそう？みなさんの率直な意見を</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 質問・雑談に関するトピ -->
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">💬 質問・雑談に関するトピ</div>
+        <div class="sidebar-topic-list">
+          <div class="sidebar-topic-item">
+            <span class="sidebar-rank">1</span>
+            <a href="shufuse-community-topic.html" class="sidebar-topic-title">夫が家事を手伝ってくれない…うまく巻き込む方法を教えて</a>
+          </div>
+          <div class="sidebar-topic-item">
+            <span class="sidebar-rank">2</span>
+            <a href="shufuse-community-topic.html" class="sidebar-topic-title">みんなは朝ごはん何食べてる？最近のマイブームを教えてください</a>
+          </div>
+          <div class="sidebar-topic-item">
+            <span class="sidebar-rank">3</span>
+            <a href="shufuse-community-topic.html" class="sidebar-topic-title">義母との上手な距離感って？みなさんどうしていますか</a>
+          </div>
+          <div class="sidebar-topic-item">
+            <span class="sidebar-rank">4</span>
+            <a href="shufuse-community-topic.html" class="sidebar-topic-title">40代から始めて良かった趣味があったら教えてください！</a>
+          </div>
+          <div class="sidebar-topic-item">
+            <span class="sidebar-rank">5</span>
+            <a href="shufuse-community-topic.html" class="sidebar-topic-title">在宅ワーク、実際どうですか？メリット・デメリット聞かせて</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- カテゴリー -->
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">🗂 カテゴリー</div>
+        <div class="tag-section">
+          <div class="tag-list">
+            <span class="tag">家事・暮らし</span>
+            <span class="tag">芸能</span>
+            <span class="tag">ニュース</span>
+            <span class="tag">お金・節約</span>
+            <span class="tag">家族・育児</span>
+            <span class="tag">美容・コスメ</span>
+            <span class="tag">健康・医療</span>
+            <span class="tag">趣味</span>
+            <span class="tag">おでかけ</span>
+            <span class="tag">質問・雑談</span>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="https://shufuse.com/wp-content/themes/simplicity2-custom/images/logo.png" alt="シュフーズ">
+      <span class="footer-logo-text">コミュニティ</span>
+    </div>
+    <nav class="footer-links">
+      <a href="#">運営会社</a>
+      <a href="#">お問い合わせ</a>
+      <a href="#">よくある質問</a>
+      <a href="#">利用規約</a>
+      <a href="#">プライバシーポリシー</a>
+      <a href="#">シュフーズ TOP</a>
+    </nav>
+    <p class="footer-copy">© 2026 シュフーズ All Rights Reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
