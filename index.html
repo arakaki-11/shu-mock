@@ -278,6 +278,13 @@
     font-weight: 600;
   }
 
+  .topic-icon {
+    flex-shrink: 0;
+    font-size: 16px;
+    margin-top: 2px;
+    line-height: 1;
+  }
+
   /* ========== SIDEBAR ========== */
   .sidebar {
     display: flex;
@@ -457,7 +464,155 @@
     .site-title { font-size: 17px; }
 
     .logo-wrap img { height: 28px; }
+
+    .top-tiles-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
+  /* ========== TOP TILES (3列2行) ========== */
+  .top-tiles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .top3-card {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 14px 14px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: background 0.15s, box-shadow 0.15s;
+    overflow: hidden;
+    text-decoration: none;
+  }
+
+  .top3-card:hover {
+    background: var(--color-primary-light);
+    box-shadow: 0 3px 10px rgba(232,137,160,0.18);
+  }
+
+  .top3-rank {
+    font-size: 26px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+  .rank-color-1 { color: var(--color-rank-1); }
+  .rank-color-2 { color: var(--color-rank-2); }
+  .rank-color-3 { color: var(--color-rank-3); }
+  .rank-color-other { color: var(--color-rank-other); }
+
+  .top3-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #2a6db5;
+    line-height: 1.55;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .top3-card:hover .top3-title {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  .top3-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: auto;
+  }
+
+  .top3-comments {
+    font-size: 11px;
+    color: var(--color-text-light);
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+  }
+  .top3-comments::before { content: '💬'; font-size: 11px; }
+
+  /* もっと見るカード */
+  .tile-more-card {
+    background: var(--color-primary-light);
+    border: 2px dashed var(--color-accent);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 14px;
+    text-decoration: none;
+    transition: background 0.15s, border-color 0.15s;
+    min-height: 100px;
+  }
+
+  .tile-more-card:hover {
+    background: #fce4ed;
+    border-color: var(--color-primary);
+  }
+
+  .tile-more-icon {
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  .tile-more-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  /* ========== 新着トピックセクション ========== */
+  .section-heading {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    padding-left: 2px;
+  }
+
+  .section-heading::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 17px;
+    background: var(--color-primary);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  /* ========== TIME GROUP ========== */
+  .time-group-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--color-text-light);
+    padding: 6px 16px 4px;
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    letter-spacing: 0.04em;
+  }
+
+  .topic-list {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
   .btn-post-topic {
     display: block;
     background: var(--color-primary);
@@ -489,10 +644,6 @@
       </a>
       <span class="site-catch">✦ シュフのためのおしゃべりコーナー</span>
     </div>
-    <nav class="header-nav">
-      <a href="index.html" class="active"><span class="nav-icon">🔥</span>注目トピック</a>
-      <a href="shufuse-community-new.html"><span class="nav-icon">🆕</span>新着トピック</a>
-    </nav>
   </div>
 </header>
 
@@ -502,129 +653,191 @@
 
     <!-- LEFT COLUMN -->
     <main class="main-col">
-      <ol class="topic-list" style="list-style:none;">
 
-        <li class="topic-item">
-          <div class="rank-badge rank-1">1</div>
-          <div class="topic-body">
-            <a href="shufuse-community-topic.html" class="topic-title">俳優・村上虹郎さんが傷害の疑いで書類送検　当時の交際女性に暴行し全治1か月以上の重傷を負わせた疑い</a>
-            <div class="topic-meta">
-              <span class="topic-cat">ニュース</span>
-              <span class="topic-meta-item comments">382コメント</span>
-              <span class="topic-meta-item">3分前</span>
-            </div>
+      <!-- 注目トピック タイル（3列×2行） -->
+      <p class="section-heading">🔥 注目トピック</p>
+      <div class="top-tiles-grid">
+
+        <a href="shufuse-community-topic.html" class="top3-card">
+          <div class="top3-rank rank-color-1">1</div>
+          <div class="top3-title">俳優・村上虹郎さんが傷害の疑いで書類送検　当時の交際女性に暴行し全治1か月以上の重傷を負わせた疑い</div>
+          <div class="top3-meta">
+            <span class="topic-cat">ニュース</span>
+            <span class="top3-comments">382コメント</span>
           </div>
-        </li>
+        </a>
 
-        <li class="topic-item">
-          <div class="rank-badge rank-2">2</div>
-          <div class="topic-body">
-            <a href="shufuse-community-topic.html" class="topic-title">【節約術】食費を月2万円台に抑えるために実践していること</a>
-            <div class="topic-meta">
-              <span class="topic-cat">料理・食べ物</span>
-              <span class="topic-meta-item comments">291コメント</span>
-              <span class="topic-meta-item">8分前</span>
-            </div>
+        <a href="shufuse-community-topic.html" class="top3-card">
+          <div class="top3-rank rank-color-2">2</div>
+          <div class="top3-title">【節約術】食費を月2万円台に抑えるために実践していること</div>
+          <div class="top3-meta">
+            <span class="topic-cat">お金・節約</span>
+            <span class="top3-comments">291コメント</span>
           </div>
-        </li>
+        </a>
 
-        <li class="topic-item">
-          <div class="rank-badge rank-3">3</div>
-          <div class="topic-body">
-            <a href="shufuse-community-topic.html" class="topic-title">夫が家事を手伝ってくれない…うまく巻き込む方法を教えてください</a>
-            <div class="topic-meta">
-              <span class="topic-cat">家族・子育て</span>
-              <span class="topic-meta-item comments">247コメント</span>
-              <span class="topic-meta-item">15分前</span>
-            </div>
+        <a href="shufuse-community-topic.html" class="top3-card">
+          <div class="top3-rank rank-color-3">3</div>
+          <div class="top3-title">夫が家事を手伝ってくれない…うまく巻き込む方法を教えてください</div>
+          <div class="top3-meta">
+            <span class="topic-cat">家族・育児</span>
+            <span class="top3-comments">247コメント</span>
           </div>
-        </li>
+        </a>
 
-        <li class="topic-item">
-          <div class="rank-badge rank-other">4</div>
-          <div class="topic-body">
-            <a href="shufuse-community-topic.html" class="topic-title">平野紫耀、パリで魅せた総額1000万円超えルックにファン悶絶…厚い胸板と肉体美が際立つ"世界基準のスタイル"</a>
-            <div class="topic-meta">
-              <span class="topic-cat">芸能人</span>
-              <span class="topic-meta-item comments">198コメント</span>
-              <span class="topic-meta-item">22分前</span>
-            </div>
+        <a href="shufuse-community-topic.html" class="top3-card">
+          <div class="top3-rank rank-color-other">4</div>
+          <div class="top3-title">平野紫耀、パリで魅せた総額1000万円超えルックにファン悶絶…厚い胸板と肉体美が際立つ"世界基準のスタイル"</div>
+          <div class="top3-meta">
+            <span class="topic-cat">芸能</span>
+            <span class="top3-comments">198コメント</span>
           </div>
-        </li>
+        </a>
 
-        <li class="topic-item">
-          <div class="rank-badge rank-other">5</div>
-          <div class="topic-body">
-            <a href="shufuse-community-topic.html" class="topic-title">江頭2:50、韓国の辛ラーメンを「味がしない、10点！」と超酷評…芸能界の"アレンジブーム"も一蹴した忖度ゼロの男気</a>
-            <div class="topic-meta">
-              <span class="topic-cat">芸能人</span>
-              <span class="topic-meta-item comments">175コメント</span>
-              <span class="topic-meta-item">31分前</span>
-            </div>
+        <a href="shufuse-community-topic.html" class="top3-card">
+          <div class="top3-rank rank-color-other">5</div>
+          <div class="top3-title">江頭2:50、韓国の辛ラーメンを「味がしない、10点！」と超酷評…芸能界の"アレンジブーム"も一蹴した忖度ゼロの男気</div>
+          <div class="top3-meta">
+            <span class="topic-cat">芸能</span>
+            <span class="top3-comments">175コメント</span>
           </div>
-        </li>
+        </a>
+
+        <a href="#" class="tile-more-card">
+          <div class="tile-more-icon">📋</div>
+          <div class="tile-more-label">もっと見る</div>
+        </a>
+
+      </div>
+
+      <!-- 新着トピック リスト -->
+      <p class="section-heading">🆕 新着トピック</p>
+      <ul class="topic-list" style="list-style:none;">
 
         <li class="topic-item">
-          <div class="rank-badge rank-other">6</div>
+          <div class="topic-icon">✏️</div>
           <div class="topic-body">
-            <a href="shufuse-community-topic.html" class="topic-title">40代でもオシャレに見えるファッションって？今年のトレンドどう取り入れてる？</a>
-            <div class="topic-meta">
-              <span class="topic-cat">ファッション</span>
-              <span class="topic-meta-item comments">162コメント</span>
-              <span class="topic-meta-item">44分前</span>
-            </div>
-          </div>
-        </li>
-
-        <li class="topic-item">
-          <div class="rank-badge rank-other">7</div>
-          <div class="topic-body">
-            <a href="shufuse-community-topic.html" class="topic-title">義母との関係、みなさんどうやってうまくやっていますか？</a>
-            <div class="topic-meta">
-              <span class="topic-cat">家族・子育て</span>
-              <span class="topic-meta-item comments">143コメント</span>
-              <span class="topic-meta-item">58分前</span>
-            </div>
-          </div>
-        </li>
-
-        <li class="topic-item">
-          <div class="rank-badge rank-other">8</div>
-          <div class="topic-body">
-            <a href="shufuse-community-topic.html" class="topic-title">ドラマ「愛の余白」最終回、泣けすぎて…感想を語り合おう</a>
-            <div class="topic-meta">
-              <span class="topic-cat">芸能人</span>
-              <span class="topic-meta-item comments">129コメント</span>
-              <span class="topic-meta-item">1時間前</span>
-            </div>
-          </div>
-        </li>
-
-        <li class="topic-item">
-          <div class="rank-badge rank-other">9</div>
-          <div class="topic-body">
-            <a href="shufuse-community-topic.html" class="topic-title">夏のダイエット、モチベが続かない…みんなどうしてる？</a>
+            <a href="shufuse-community-topic.html" class="topic-title">在宅ワークを始めたいけど何がいいかわからない…経験者に聞きたい！</a>
             <div class="topic-meta">
               <span class="topic-cat">質問・雑談</span>
-              <span class="topic-meta-item comments">118コメント</span>
-              <span class="topic-meta-item">1時間前</span>
+              <span class="topic-meta-item comments">3コメント</span>
+              <span class="topic-meta-item">たった今</span>
             </div>
           </div>
         </li>
 
         <li class="topic-item">
-          <div class="rank-badge rank-other">10</div>
+          <div class="topic-icon">✏️</div>
           <div class="topic-body">
-            <a href="shufuse-community-topic.html" class="topic-title">電気代・ガス代の値上がり…みなさんの節約対策を教えてください</a>
+            <a href="shufuse-community-topic.html" class="topic-title">夏の紫外線対策、みなさんは何使ってますか？おすすめ日焼け止め教えて</a>
             <div class="topic-meta">
-              <span class="topic-cat">ニュース</span>
-              <span class="topic-meta-item comments">105コメント</span>
-              <span class="topic-meta-item">2時間前</span>
+              <span class="topic-cat">美容・コスメ</span>
+              <span class="topic-meta-item comments">5コメント</span>
+              <span class="topic-meta-item">2分前</span>
             </div>
           </div>
         </li>
 
-      </ol>
+        <li class="topic-item">
+          <div class="topic-icon">✏️</div>
+          <div class="topic-body">
+            <a href="shufuse-community-topic.html" class="topic-title">子どもの習い事、何をさせるか迷っています。小学生低学年のおすすめは？</a>
+            <div class="topic-meta">
+              <span class="topic-cat">家族・育児</span>
+              <span class="topic-meta-item comments">8コメント</span>
+              <span class="topic-meta-item">5分前</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="topic-item">
+          <div class="topic-icon">✏️</div>
+          <div class="topic-body">
+            <a href="shufuse-community-topic.html" class="topic-title">少子化対策の新制度、実際に使えそう？みなさんの率直な意見を聞かせて</a>
+            <div class="topic-meta">
+              <span class="topic-cat">ニュース</span>
+              <span class="topic-meta-item comments">12コメント</span>
+              <span class="topic-meta-item">9分前</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="topic-item">
+          <div class="topic-icon">✏️</div>
+          <div class="topic-body">
+            <a href="shufuse-community-topic.html" class="topic-title">家計管理アプリどれがおすすめ？使ってみた感想を教えてください</a>
+            <div class="topic-meta">
+              <span class="topic-cat">お金・節約</span>
+              <span class="topic-meta-item comments">17コメント</span>
+              <span class="topic-meta-item">14分前</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="topic-item">
+          <div class="topic-icon">✏️</div>
+          <div class="topic-body">
+            <a href="shufuse-community-topic.html" class="topic-title">40代から始めて良かった趣味があったら教えてください！</a>
+            <div class="topic-meta">
+              <span class="topic-cat">趣味</span>
+              <span class="topic-meta-item comments">21コメント</span>
+              <span class="topic-meta-item">20分前</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="topic-item">
+          <div class="topic-icon">✏️</div>
+          <div class="topic-body">
+            <a href="shufuse-community-topic.html" class="topic-title">子どもの貧困、過去最悪水準に…ひとり親家庭の厳しい現実をどう思う？</a>
+            <div class="topic-meta">
+              <span class="topic-cat">ニュース</span>
+              <span class="topic-meta-item comments">29コメント</span>
+              <span class="topic-meta-item">28分前</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="topic-item">
+          <div class="topic-icon">✏️</div>
+          <div class="topic-body">
+            <a href="shufuse-community-topic.html" class="topic-title">40代、白髪ケアどうしてる？染める？活かす？みなさんの選択を聞かせて</a>
+            <div class="topic-meta">
+              <span class="topic-cat">美容・コスメ</span>
+              <span class="topic-meta-item comments">34コメント</span>
+              <span class="topic-meta-item">35分前</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="topic-item">
+          <div class="topic-icon">✏️</div>
+          <div class="topic-body">
+            <a href="shufuse-community-topic.html" class="topic-title">近所のスーパー、値上がりが激しすぎる…みなさんの近くはどうですか？</a>
+            <div class="topic-meta">
+              <span class="topic-cat">家事・暮らし</span>
+              <span class="topic-meta-item comments">41コメント</span>
+              <span class="topic-meta-item">43分前</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="topic-item">
+          <div class="topic-icon">✏️</div>
+          <div class="topic-body">
+            <a href="shufuse-community-topic.html" class="topic-title">今年の夏休み、子どもとどこに行く予定ですか？おすすめスポット教えて！</a>
+            <div class="topic-meta">
+              <span class="topic-cat">おでかけ</span>
+              <span class="topic-meta-item comments">58コメント</span>
+              <span class="topic-meta-item">1時間前</span>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+      <div style="text-align:center; margin-top:12px;">
+        <a href="#" style="display:inline-block; padding:10px 40px; background:#fff; border:2px solid var(--color-primary); border-radius:20px; font-size:13px; font-weight:700; color:var(--color-primary); transition:all 0.2s;" onmouseover="this.style.background='var(--color-primary)';this.style.color='#fff';" onmouseout="this.style.background='#fff';this.style.color='var(--color-primary)';">もっと見る</a>
+      </div>
     </main>
 
     <!-- RIGHT SIDEBAR -->
